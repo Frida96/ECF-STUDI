@@ -7,25 +7,28 @@ body {
 }
 
 header {
+    padding: 2em;
     background-color: #4d2816;
-    color: #f4f4f5;
+    color: black;
     padding: 1em;
     display: flex;
     align-items: center;
-    position: relative; /* le header est le point de reference le positionnement des éléments*/
+    justify-content: space-between;
+    position: relative; /*le header est le point de reference pour le positionnement des élèments*/
     height: 72px;
+    width: 100%;
+    background-color: #4d2816;
 }
 
 .logo {
-    position: absolute;
-    left: 300px;
-    top: 10px; 
+    height: 100%;
 }
 
 .logo img {
-    height: 180px; 
-    width: 180x; 
-    border-radius: 50%; /* faire du logo un cercle*/
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    border-radius: 50%; /*faire du logo un cercle*/
 }
 
 nav {
@@ -40,7 +43,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
 nav ul li {
@@ -50,11 +53,11 @@ nav ul li {
 nav ul li.connexion {
     position: absolute;
     right: 0;
-    margin-right: 20px; /* mettre connexion tout à droite*/
+    margin-right: 20px; /*mettre connexion tout à droite*/
 }
 
 nav ul li a {
-    color: #f4f4f5;
+    color: black;
     text-decoration: none;
     font-weight: bold;
 }
@@ -72,6 +75,52 @@ main section {
     margin-bottom: 2em;
 }
 
+#welcome-section {
+    padding: 2em;
+    color: black;
+}
+
+#welcome-section h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#welcome-section .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+#welcome-section p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    flex: 1;
+    margin-right: 1em;
+    text-align: left;
+}
+
+#welcome-section .images {
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome-section .images img {
+    width: 250px;
+    height: auto;
+    margin-bottom: 1em;
+    border-radius: 50%;
+}
+
+#welcome-section .accueil {
+    display: flex;
+}
+
+#welcome-section .accueil img {
+    width: 60%;
+    position: left;
+    border-radius: 30%;
+}
+
 footer {
     background-color: #4d2816;
     color: #f4f4f5;
@@ -82,22 +131,59 @@ footer {
     width: 100%;
 }
 
-/* style de la page d'accueil*/
-#welcome-section {
-    background-image: url('Animaux\ montagne\ 2.jpg');
-    background-size: cover;
-    color: white;
-    padding: 2em;
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li.connexion {
+        position: static;
+        margin: 10px 0 0 0;
+    }
+
+    #presentation-zoo .content {
+        flex-direction: column;
+    }
+
+    #presentation-zoo p {
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
+
+    #presentation-zoo .images {
+        align-items: center;
+    }
+
+    #presentation-zoo .images img {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
-#welcome-section h2 {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: black;
-    font-size: 2.5em; 
-    margin-bottom: 0.5em;
-}
+@media (max-width: 480px) {
+    header {
+        padding: 0.5em;
+    }
 
-#welcome-section p {
-    font-size: 1.2em;
-    margin-bottom: 1.5em;
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    #presentation-zoo {
+        padding: 1em;
+    }
 }

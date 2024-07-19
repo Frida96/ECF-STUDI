@@ -9,7 +9,9 @@
 <body>
     <header>
         <div class="logo">
-            <img src="LOGO ARCADIA.png" alt="Arcadia ZOO Logo">
+            <a href="index.html">
+                <img src="LOGO ARCADIA.png" alt="Arcadia ZOO Logo">
+            </a>
         </div>
         <nav>
             <ul>
@@ -22,9 +24,20 @@
         </nav>
     </header>
     <main>
-        <section>
+        <section id="contact-section">
             <h2>Contactez-nous</h2>
-            <p>Envoyez-nous un message ou trouvez nos informations de contact.</p>
+            <form action="submit_contact.php" method="post">
+                <label for="title">Titre :</label>
+                <input type="text" id="title" name="title" required>
+                
+                <label for="description">Description :</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+                
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                
+                <button type="submit">Envoyer</button>
+            </form>
         </section>
     </main>
     <footer>
